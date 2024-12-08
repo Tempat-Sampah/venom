@@ -1,63 +1,19 @@
-/*
-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mMMMMMMMMMNNNmmNNNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNMMNMMMMNNNNNmmmddhdddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mddNMMNy:/odNmmddmmNNmdhhddmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmdNMNd:--+dNmmddhhddmmhsyhhmdmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNmdNmy:.-oyNmmmhmdhho+sososyhhhddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmNdh+-`.:oyNNdmmdmmdo-://oysssyhhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-Nmmmoyyyo+osdNmdmmddNNhs+/::/+osyssydyhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNmhsymMMNmmmmdmdNNddNmsso+++////ossssyyhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mhhhmNNMNNNhssshhmmddmmssyooooso/::+oysshhhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmdhdddNNdyoosyhdmddmmmsoooooyysyys/::/oyyhhhyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mdddhddmhsooshdmdmdhhyyyysso/ooo+syhhs/-/+shyhMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-dyyhdmd+ososhdmdmyyhhhhhhhyo++o/+///+ohhso++sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-dhdmNNdsossyhmdmsydhssssyhhs/++o/o+//:++yhhy+/hNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mdmNNNNmhysshddyshdyyy/oss+s::/:://++///++++/::hmNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNMNNNmmNNdymNNhshdshdyhdysh+sy+-:++osssosss++yNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNNNmdNNmNmmmNmyyddyyhdhydyohys/-oo+osssysyyohNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNhdNmmNNmNMMNhyyhhhdhyyhmmyh+-/s+sysssyyhyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mNMMMhdNdmMNMMMMMNNmdhdddmhdmmNho/-osoyyo++oyddhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NMMMNmhNdNMNMNMMNmNNNmmmdyoohmhoyo::hsooo++oooydhymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMNNNhmNNMmmNMNNmmmmdmmdyhhoyddddoo++yoyysooossyhsmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMNNNmmNNNmdNdNmmddhhhdNNhsmNssdooo/dso++osyyysoymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMNNNNmNNNNNmddmmNhshNmmmNmNMdhNsh/ohho++/:++MMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MNNNMMNNNNmmmhhhhdyosdNmdmMMhoNmhdmys+ooo++/+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNMMNNNNmddmdoodmMMNmmNNhssdmNMMMNdNd/osomMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNdhMNmNNMNmdNddohmMMNNNmdmdddNMMMMMMMMmMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNhmMmmmmNNmdNyoNMNmNmdhyyyhdhoyNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmdmMmmddddNmmdys+hmMMMmmhysssyy++dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmdNMMdmdddmmNNyshmNNNNNNNdhhs+yy//dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNMMMdmdddmmMNysdmNNMMMNhhNdhs+y+/:mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNMMNhmmddNNNMdyydmMMMNdyshNhyoss+:/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNMMddmmmmNMNMNdsymNNmdhhdNMNdhsss+:yMMMMMMMMMMMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMdhmmmmmNMNNMmshNMMMmmMMMMMmNdyo+//NMMMMMMMMMMMMMMMhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMmhmmmmmmNMMNNMyshdhhhyhNMMMMMMdhso+sMMMMMMMMMMMMMMMhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMmdmmmmmmmNMMMmNm+ys++oyyNMMMMMMNmmyyoyNMMMMMMMMMMMMMddMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmmmmmmmmmmNMNNmNNyyo+/oohNMMMMMMMMdhhsshmMMMMMMMMMMMyNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNNNNmmmmNMMNmmddNmmdhhdmMMMMMMMMMNddhssshmmNNNmmdhdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNNNNNNNNNNNNNNNmNNNNMMMMMNomMMMMMMMMMNNmdhhyyyyyyyhdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-Nd+oNMMMMMMMmodo++++++++++m..yNMMMMMNo+mNMMmhssshdNMMNhNMMMMMMMMMMMddMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MN+ /NMMMMMm: d` -ssssss+`d. `+mMMMMN. dNm+:+syso//hNN--yNMMMMMMMd+`yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMN+ /NMMMm: oM` +NMMMMMNdN. /`.yNMMN. dh.omMMMMMNy.oM- `:hNMMMm+.  yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMN/ /NMm: oNy` :sssmMMMMN. dh-`/mMN. d-/NMMMMMMMMy`m- y/`/dmo..o: yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMN/ /m: +NNy. /yyyNMMMMN. dNNo`.yN- d.oNMMMMMMMMd d- mNh-`.`+mN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMN/ . +NMMN- oNMMMMMNdN. dMMMd:`/. ds.dNMMMMMMm::M- dMMNy/dMMN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMN/ +NMMMN- /yyyyyys d. dMMMMNo`  dNy-+ymmmho-+NN- dMMMMMMMMN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMNyNMMMMN+::::::::::m+/mMMMMMMd: dMMNho///+ymMMN+/mMMMMMMMMNs/hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsmMMMMMMMMMMMMMMNNNNMMNNNMMNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-*/
 import { EventEmitter } from 'events';
-import { Page } from 'puppeteer';
+import { Page, Browser } from 'puppeteer';
 import { CreateConfig } from '../../config/create-config';
 import { ExposedFn } from '../helpers/exposed.enum';
-import { Ack, Chat, LiveLocation, Message, ParticipantEvent } from '../model';
+import {
+  Ack,
+  Chat,
+  LiveLocation,
+  Message,
+  Reaction,
+  ParticipantEvent,
+  PicTumb,
+  ChatStatus
+} from '../model';
 import { SocketState, SocketStream } from '../model/enum';
+import { InterfaceChangeMode } from '../model';
 import { InterfaceMode } from '../model/enum/interface-mode';
 import { InterfaceState } from '../model/enum/interface-state';
 import { ProfileLayer } from './profile.layer';
@@ -67,29 +23,38 @@ declare global {
   interface Window {
     onMessage: any;
     onAnyMessage: any;
+    onMessageEdit: any;
+    onMessageDelete: any;
+    onMessageReaction: any;
     onStateChange: any;
     onIncomingCall: any;
     onAck: any;
     onStreamChange: any;
+    onFilePicThumb: any;
+    onChatState: any;
+    onUnreadMessage: any;
+    onInterfaceChange: any;
+    onAddedToGroup: any;
+    func: any;
+    onLiveLocation: any;
+    waitNewMessages: any;
+    onPoll: any;
   }
 }
+
 const callonMessage = new callbackWile();
 const callOnack = new callbackWile();
+
 export class ListenerLayer extends ProfileLayer {
   private listenerEmitter = new EventEmitter();
 
-  constructor(public page: Page, session?: string, options?: CreateConfig) {
-    super(page, session, options);
-
-    this.page.on('load', async () => {
-      try {
-        await page.waitForSelector('canvas, #app .two, #startup', {
-          visible: true
-        });
-      } catch {}
-      await this._initialize(this.page);
-      await this.initialize();
-    });
+  constructor(
+    public browser: Browser,
+    public page: Page,
+    session?: string,
+    options?: CreateConfig
+  ) {
+    super(browser, page, session, options);
 
     this.page.on('close', () => {
       this.cancelAutoClose();
@@ -98,11 +63,7 @@ export class ListenerLayer extends ProfileLayer {
   }
 
   public async initialize() {
-    const functions = [
-      ...Object.values(ExposedFn),
-      'onAddedToGroup',
-      'onIncomingCall'
-    ];
+    const functions = [...Object.values(ExposedFn)];
 
     for (const func of functions) {
       const has = await this.page
@@ -111,55 +72,228 @@ export class ListenerLayer extends ProfileLayer {
 
       if (!has) {
         await this.page
-          .exposeFunction(func, (...args) =>
+          .exposeFunction(func, (...args: any) =>
             this.listenerEmitter.emit(func, ...args)
           )
           .catch(() => {});
       }
     }
 
+    await this.addMsg();
     await this.page
       .evaluate(() => {
-        if (!window['onAnyMessage'].exposed) {
-          window.WAPI.allNewMessagesListener(window['onAnyMessage']);
-          window['onAnyMessage'].exposed = true;
-        }
-        if (!window['onStateChange'].exposed) {
-          window.WAPI.onStateChange(window['onStateChange']);
-          window['onStateChange'].exposed = true;
-        }
-        if (!window['onStreamChange'].exposed) {
-          window.WAPI.onStreamChange(window['onStreamChange']);
-          window['onStreamChange'].exposed = true;
-        }
-        if (!window['onAddedToGroup'].exposed) {
-          window.WAPI.onAddedToGroup(window['onAddedToGroup']);
-          window['onAddedToGroup'].exposed = true;
-        }
-        if (!window['onIncomingCall'].exposed) {
-          window.WAPI.onIncomingCall(window['onIncomingCall']);
-          window['onIncomingCall'].exposed = true;
-        }
-        if (!window['onInterfaceChange'].exposed) {
-          window.WAPI.onInterfaceChange(window['onInterfaceChange']);
-          window['onInterfaceChange'].exposed = true;
-        }
-        if (!window['onMessage'].exposed) {
-          window.WAPI.waitNewMessages(false, (data) => {
-            data.forEach((message) => {
-              window['onMessage'](message);
-            });
+        window.WAPI.onInterfaceChange((e: any) => {
+          window.onInterfaceChange(e);
+        });
+        window.WAPI.onStreamChange((e: any) => {
+          window.onStreamChange(e);
+        });
+        window.WAPI.onChatState((e: any) => {
+          window.onChatState(e);
+        });
+        window.WAPI.onStateChange((e: any) => {
+          window.onStateChange(e);
+        });
+        window.WAPI.onUnreadMessage((e: any) => {
+          window.onUnreadMessage(e);
+        });
+        window.WAPI.waitNewMessages(false, (data: any) => {
+          data.forEach((message: any) => {
+            window.onMessage(message);
           });
-          window['onMessage'].exposed = true;
-        }
-        if (!window['onAck'].exposed) {
-          window.WAPI.waitNewAcknowledgements(window['onAck']);
-          window['onAck'].exposed = true;
-        }
+        });
+        window.WAPI.onAddedToGroup((e: any) => {
+          window.onAddedToGroup(e);
+        });
+        window.WAPI.onAck((e: any) => {
+          window.onAck(e);
+        });
+        window.WAPI.onMessageEdit((e: any) => {
+          window.onMessageEdit(e);
+        });
+        window.WAPI.onMessageDelete((e: any) => {
+          window.onMessageDelete(e);
+        });
+        window.WAPI.onMessageReaction((e: any) => {
+          window.onMessageReaction(e);
+        });
+        window.WAPI.onPoll((e: any) => {
+          window.onPoll(e);
+        });
       })
       .catch(() => {});
   }
 
+  public async addMsg() {
+    this.page
+      .evaluate(() => {
+        let isHeroEqual = {};
+
+        // Install the new message listener (add event)
+        window.Store.Msg.on('add', async (newMessage) => {
+          if (!Object.is(isHeroEqual, newMessage)) {
+            isHeroEqual = newMessage;
+            if (newMessage && newMessage.isNewMsg) {
+              const processMessageObj = await window.WAPI.processMessageObj(
+                newMessage,
+                true,
+                false
+              );
+              window.onAnyMessage(processMessageObj);
+            }
+          }
+        });
+
+        // Install the changed message / deleted message listener (change:body change:caption events)
+        window.Store.Msg.on(
+          'change:body change:caption',
+          async (newMessage) => {
+            if (newMessage && newMessage.isNewMsg) {
+              const processMessageObj = await window.WAPI.processMessageObj(
+                newMessage,
+                true,
+                false
+              );
+
+              // Edit or Delete?
+              if (newMessage.type == 'revoked') {
+                window.onMessageDelete(processMessageObj);
+              } else {
+                window.onMessageEdit(processMessageObj);
+              }
+            }
+          }
+        );
+
+        // Install the message reaction listener
+        // This is a strange one - seems like the way to do it is to override the WhatsApp WAWebAddonReactionTableMode.reactionTableMode.bulkUpsert function
+        const module = window.Store.Reaction.reactionTableMode;
+        const ogMethod = module.bulkUpsert;
+        module.bulkUpsert = ((...args) => {
+          if (args[0].length > 0) {
+            window.onMessageReaction(args[0][0]);
+          }
+          return ogMethod(...args);
+        }).bind(module);
+      })
+      .catch(() => {});
+  }
+
+  public async onPoll(fn: (ack: any) => void) {
+    this.listenerEmitter.on(ExposedFn.onPoll, (e) => {
+      fn(e);
+    });
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onPoll, (e) => {
+          fn(e);
+        });
+      }
+    };
+  }
+
+  /**
+   * @event Listens to all new messages
+   * @param fn
+   */
+  public async onAnyMessage(fn: (message: Message) => void) {
+    this.listenerEmitter.on(ExposedFn.OnAnyMessage, (msg) => {
+      fn(msg);
+    });
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.OnAnyMessage, (msg) => {
+          fn(msg);
+        });
+      }
+    };
+  }
+
+  /**
+   * @event Listens for edited message
+   * @param fn
+   */
+  public async onMessageEdit(fn: (message: Message) => void) {
+    this.listenerEmitter.on(ExposedFn.OnMessageEdit, (msg) => {
+      fn(msg);
+    });
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.OnMessageEdit, (msg) => {
+          fn(msg);
+        });
+      }
+    };
+  }
+
+  /**
+   * @event Listens for deleted message
+   * @param fn
+   */
+  public async onMessageDelete(fn: (message: Message) => void) {
+    this.listenerEmitter.on(ExposedFn.OnMessageDelete, (msg) => {
+      fn(msg);
+    });
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.OnMessageDelete, (msg) => {
+          fn(msg);
+        });
+      }
+    };
+  }
+
+  /**
+   * @event Listens for reactions to messages
+   * @param fn
+   */
+  public async onMessageReaction(fn: (reaction: Reaction) => void) {
+    this.listenerEmitter.on(ExposedFn.OnMessageReaction, (reaction) => {
+      fn(reaction);
+    });
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.OnMessageReaction, (reaction) => {
+          fn(reaction);
+        });
+      }
+    };
+  }
+
+  /**
+   * @event Listens to messages received
+   * @returns Observable stream of messages
+   */
+  public async onStateChange(fn: (state: SocketState) => void) {
+    this.listenerEmitter.on(ExposedFn.onStateChange, fn);
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onStateChange, fn);
+      }
+    };
+  }
+
+  /**
+   * @returns Returns chat state
+   */
+  public async onChatState(fn: (state: ChatStatus) => void) {
+    this.listenerEmitter.on(ExposedFn.onChatState, (state: ChatStatus) => {
+      fn(state);
+    });
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onChatState, fn);
+      }
+    };
+  }
+
+  ////////////////////////////////////////////////////
   /**
    * @returns Returns the current state of the connection
    */
@@ -170,6 +304,51 @@ export class ListenerLayer extends ProfileLayer {
     return {
       dispose: () => {
         this.listenerEmitter.off(ExposedFn.onStreamChange, fn);
+      }
+    };
+  }
+
+  /**
+   * @event Listens to interface mode change See {@link InterfaceState} and {@link InterfaceMode} for details
+   * @returns A disposable object to cancel the event
+   */
+  public async onInterfaceChange(
+    fn: (state: {
+      displayInfo: InterfaceState;
+      mode: InterfaceMode;
+      info: InterfaceState;
+    }) => void | InterfaceChangeMode | Promise<any>
+  ) {
+    this.listenerEmitter.on(ExposedFn.onInterfaceChange, fn);
+
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onInterfaceChange, fn);
+      }
+    };
+  }
+
+  //////////////////////////////////////PRO
+  /**
+   * @returns Returns new UnreadMessage
+   */
+  public async onUnreadMessage(fn: (unread: Message) => void) {
+    this.listenerEmitter.on(ExposedFn.onUnreadMessage, fn);
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onUnreadMessage, fn);
+      }
+    };
+  }
+
+  /**
+   * @returns Returns new PicThumb
+   */
+  public async onFilePicThumb(fn: (pic: PicTumb) => void) {
+    this.listenerEmitter.on(ExposedFn.onFilePicThumb, fn);
+    return {
+      dispose: () => {
+        this.listenerEmitter.off(ExposedFn.onFilePicThumb, fn);
       }
     };
   }
@@ -193,51 +372,6 @@ export class ListenerLayer extends ProfileLayer {
             fn(state);
           }
         });
-      }
-    };
-  }
-
-  /**
-   * @event Listens to all new messages
-   * @param to callback
-   * @fires Message
-   */
-  public async onAnyMessage(fn: (message: Message) => void) {
-    this.listenerEmitter.on(ExposedFn.OnAnyMessage, fn);
-
-    return {
-      dispose: () => {
-        this.listenerEmitter.off(ExposedFn.OnAnyMessage, fn);
-      }
-    };
-  }
-
-  /**
-   * @event Listens to messages received
-   * @returns Observable stream of messages
-   */
-  public async onStateChange(fn: (state: SocketState) => void) {
-    this.listenerEmitter.on(ExposedFn.onStateChange, fn);
-
-    return {
-      dispose: () => {
-        this.listenerEmitter.off(ExposedFn.onStateChange, fn);
-      }
-    };
-  }
-
-  /**
-   * @event Listens to interface mode change See {@link InterfaceState} and {@link InterfaceMode} for details
-   * @returns A disposable object to cancel the event
-   */
-  public onInterfaceChange(
-    fn: (state: { displayInfo: InterfaceState; mode: InterfaceMode }) => void
-  ) {
-    this.listenerEmitter.on(ExposedFn.onInterfaceChange, fn);
-
-    return {
-      dispose: () => {
-        this.listenerEmitter.off(ExposedFn.onInterfaceChange, fn);
       }
     };
   }

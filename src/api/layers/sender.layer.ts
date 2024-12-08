@@ -1,77 +1,39 @@
-/*
-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mMMMMMMMMMNNNmmNNNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNMMNMMMMNNNNNmmmddhdddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mddNMMNy:/odNmmddmmNNmdhhddmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmdNMNd:--+dNmmddhhddmmhsyhhmdmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNmdNmy:.-oyNmmmhmdhho+sososyhhhddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmNdh+-`.:oyNNdmmdmmdo-://oysssyhhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-Nmmmoyyyo+osdNmdmmddNNhs+/::/+osyssydyhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNmhsymMMNmmmmdmdNNddNmsso+++////ossssyyhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mhhhmNNMNNNhssshhmmddmmssyooooso/::+oysshhhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmdhdddNNdyoosyhdmddmmmsoooooyysyys/::/oyyhhhyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mdddhddmhsooshdmdmdhhyyyysso/ooo+syhhs/-/+shyhMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-dyyhdmd+ososhdmdmyyhhhhhhhyo++o/+///+ohhso++sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-dhdmNNdsossyhmdmsydhssssyhhs/++o/o+//:++yhhy+/hNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mdmNNNNmhysshddyshdyyy/oss+s::/:://++///++++/::hmNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNMNNNmmNNdymNNhshdshdyhdysh+sy+-:++osssosss++yNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNNNmdNNmNmmmNmyyddyyhdhydyohys/-oo+osssysyyohNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNhdNmmNNmNMMNhyyhhhdhyyhmmyh+-/s+sysssyyhyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mNMMMhdNdmMNMMMMMNNmdhdddmhdmmNho/-osoyyo++oyddhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NMMMNmhNdNMNMNMMNmNNNmmmdyoohmhoyo::hsooo++oooydhymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMNNNhmNNMmmNMNNmmmmdmmdyhhoyddddoo++yoyysooossyhsmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMNNNmmNNNmdNdNmmddhhhdNNhsmNssdooo/dso++osyyysoymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMNNNNmNNNNNmddmmNhshNmmmNmNMdhNsh/ohho++/:++MMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MNNNMMNNNNmmmhhhhdyosdNmdmMMhoNmhdmys+ooo++/+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNMMNNNNmddmdoodmMMNmmNNhssdmNMMMNdNd/osomMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNdhMNmNNMNmdNddohmMMNNNmdmdddNMMMMMMMMmMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNhmMmmmmNNmdNyoNMNmNmdhyyyhdhoyNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmdmMmmddddNmmdys+hmMMMmmhysssyy++dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmdNMMdmdddmmNNyshmNNNNNNNdhhs+yy//dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNMMMdmdddmmMNysdmNNMMMNhhNdhs+y+/:mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNMMNhmmddNNNMdyydmMMMNdyshNhyoss+:/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmNMMddmmmmNMNMNdsymNNmdhhdNMNdhsss+:yMMMMMMMMMMMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMdhmmmmmNMNNMmshNMMMmmMMMMMmNdyo+//NMMMMMMMMMMMMMMMhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMmhmmmmmmNMMNNMyshdhhhyhNMMMMMMdhso+sMMMMMMMMMMMMMMMhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMmdmmmmmmmNMMMmNm+ys++oyyNMMMMMMNmmyyoyNMMMMMMMMMMMMMddMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NmmmmmmmmmmmNMNNmNNyyo+/oohNMMMMMMMMdhhsshmMMMMMMMMMMMyNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-mmNNNNNNmmmmNMMNmmddNmmdhhdmMMMMMMMMMNddhssshmmNNNmmdhdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-NNNNNNNNNNNNNNNNmNNNNMMMMMNomMMMMMMMMMNNmdhhyyyyyyyhdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-Nd+oNMMMMMMMmodo++++++++++m..yNMMMMMNo+mNMMmhssshdNMMNhNMMMMMMMMMMMddMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MN+ /NMMMMMm: d` -ssssss+`d. `+mMMMMN. dNm+:+syso//hNN--yNMMMMMMMd+`yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMN+ /NMMMm: oM` +NMMMMMNdN. /`.yNMMN. dh.omMMMMMNy.oM- `:hNMMMm+.  yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMN/ /NMm: oNy` :sssmMMMMN. dh-`/mMN. d-/NMMMMMMMMy`m- y/`/dmo..o: yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMN/ /m: +NNy. /yyyNMMMMN. dNNo`.yN- d.oNMMMMMMMMd d- mNh-`.`+mN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMN/ . +NMMN- oNMMMMMNdN. dMMMd:`/. ds.dNMMMMMMm::M- dMMNy/dMMN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMN/ +NMMMN- /yyyyyys d. dMMMMNo`  dNy-+ymmmho-+NN- dMMMMMMMMN/ yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMNyNMMMMN+::::::::::m+/mMMMMMMd: dMMNho///+ymMMN+/mMMMMMMMMNs/hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsmMMMMMMMMMMMMMMNNNNMMNNNMMNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-*/
 import * as path from 'path';
-import { Page } from 'puppeteer';
+import { Page, Browser } from 'puppeteer';
 import { CreateConfig } from '../../config/create-config';
 import {
   base64MimeType,
   downloadFileToBase64,
   fileToBase64,
-  stickerSelect
+  stickerSelect,
+  dowloadMetaFileBase64
 } from '../helpers';
 import { filenameFromMimeType } from '../helpers/filename-from-mimetype';
 import { Message, SendFileResult, SendStickerResult } from '../model';
 import { ChatState } from '../model/enum';
-import { ListenerLayer } from './listener.layer';
+import { AutomateLayer } from './AutomateLayer';
 import { Scope, checkValuesSender } from '../helpers/layers-interface';
+import { Mutex } from 'async-mutex';
 
 let obj: Scope;
 
-export class SenderLayer extends ListenerLayer {
-  constructor(public page: Page, session?: string, options?: CreateConfig) {
-    super(page, session, options);
+export class SenderLayer extends AutomateLayer {
+  constructor(
+    public browser: Browser,
+    public page: Page,
+    session?: string,
+    options?: CreateConfig
+  ) {
+    super(browser, page, session, options);
+  }
+
+  public async createCommunity(name: string, description: string) {
+    return await this.page.evaluate(
+      ({ name, description }) => {
+        return WAPI.createCommunity(name, description);
+      },
+      { name, description }
+    );
   }
 
   /**
@@ -113,27 +75,20 @@ export class SenderLayer extends ListenerLayer {
     });
   }
 
+  //*PRO_
   /**
-   * Sends a text message to given chat
-   * @param to chat id: xxxxx@us.c
-   * @param content text message
+   * Send status text
+   * @param text The text for the status
    */
-  public async sendText(to: string, content: string): Promise<Object> {
+  public async sendStatusText(text: string) {
     return new Promise(async (resolve, reject) => {
       const typeFunction = 'sendText';
       const type = 'string';
       const check = [
         {
-          param: 'to',
+          param: 'text',
           type: type,
-          value: to,
-          function: typeFunction,
-          isUser: true
-        },
-        {
-          param: 'content',
-          type: type,
-          value: content,
+          value: text,
           function: typeFunction,
           isUser: true
         }
@@ -142,12 +97,14 @@ export class SenderLayer extends ListenerLayer {
       if (typeof validating === 'object') {
         return reject(validating);
       }
+      const to = 'status@broadcast';
       const result = await this.page.evaluate(
-        ({ to, content }) => {
-          return WAPI.sendMessage(to, content);
+        ({ to, text }) => {
+          return WAPI.sendMessage(to, text, true);
         },
-        { to, content }
+        { to, text }
       );
+
       if (result['erro'] == true) {
         return reject(result);
       } else {
@@ -157,51 +114,16 @@ export class SenderLayer extends ListenerLayer {
   }
 
   /**
-   * Automatically sends a link with the auto generated link preview. You can also add a custom message to be added.
-   * @param chatId chat id: xxxxx@us.c
-   * @param url string A link, for example for youtube. e.g https://www.youtube.com/watch?v=Zi_XLOBDo_Y&list=RDEMe12_MlgO8mGFdeeftZ2nOQ&start_radio=1
-   * @param title custom text as the message body, this includes the link or will be attached after the link
+   * Create poll
+   * @param idUser chat id: xxxxx@us.c
    */
-  public async sendLinkPreview(
-    chatId: string,
-    url: string,
-    title: string
-  ): Promise<object> {
+  public async sendPollCreation(idUser: string, poll: any) {
     return new Promise(async (resolve, reject) => {
-      const typeFunction = 'sendLinkPreview';
-      const type = 'string';
-      const check = [
-        {
-          param: 'chatId',
-          type: type,
-          value: chatId,
-          function: typeFunction,
-          isUser: true
-        },
-        {
-          param: 'url',
-          type: type,
-          value: url,
-          function: typeFunction,
-          isUser: true
-        },
-        {
-          param: 'title',
-          type: type,
-          value: title,
-          function: typeFunction,
-          isUser: false
-        }
-      ];
-      const validating = checkValuesSender(check);
-      if (typeof validating === 'object') {
-        return reject(validating);
-      }
       const result = await this.page.evaluate(
-        ({ chatId, url, title }) => {
-          return WAPI.sendLinkPreview(chatId, url, title);
+        ({ idUser, poll }) => {
+          return WAPI.sendPollCreation(idUser, poll);
         },
-        { chatId, url, title }
+        { idUser, poll }
       );
       if (result['erro'] == true) {
         return reject(result);
@@ -211,57 +133,45 @@ export class SenderLayer extends ListenerLayer {
     });
   }
 
+  //*PRO_
   /**
-   * Sends image message base64
-   * @param to Chat id
-   * @param base64 File path, http link or base64Encoded. base64 MUST start with "data:(yourMimeType);base64,"
+   * @param filePath path, http link or base64Encoded
    * @param filename
-   * @param caption
    */
-  public async sendImageFromBase64(
-    to: string,
-    base64: string,
-    filename?: string,
-    caption?: string
+  public async sendImageStatus(
+    filePath: string,
+    description?: string
   ): Promise<SendFileResult> {
     return new Promise(async (resolve, reject) => {
-      const typeFunction = 'sendImageFromBase64';
-      const type = 'string';
-      const check = [
-        {
-          param: 'to',
-          type: type,
-          value: to,
-          function: typeFunction,
-          isUser: true
-        },
-        {
-          param: 'base64',
-          type: type,
-          value: base64,
-          function: typeFunction,
-          isUser: true
-        },
-        {
-          param: 'filename',
-          type: type,
-          value: filename,
-          function: typeFunction,
-          isUser: false
-        }
-      ];
-      const validating = checkValuesSender(check);
-      if (typeof validating === 'object') {
-        return reject(validating);
+      let base64 = await downloadFileToBase64(filePath, [
+        'image/gif',
+        'image/png',
+        'image/jpg',
+        'image/jpeg',
+        'image/webp'
+      ]);
+
+      if (!base64) {
+        base64 = await fileToBase64(filePath);
       }
 
+      if (!base64) {
+        const obj = {
+          erro: true,
+          to: 'status',
+          text: 'No such file or directory, open "' + filePath + '"'
+        };
+        return reject(obj);
+      }
+
+      let filename = path.basename(filePath);
       let mimeType = base64MimeType(base64);
 
       if (!mimeType) {
         obj = {
           erro: true,
-          to: to,
-          text: 'Invalid base64 or missing MimeType!'
+          to: 'status',
+          text: 'Invalid base64!'
         };
         return reject(obj);
       }
@@ -269,20 +179,27 @@ export class SenderLayer extends ListenerLayer {
       if (!mimeType.includes('image')) {
         const obj = {
           erro: true,
-          to: to,
-          text: 'Not an image, allowed formats png, jpeg and webp'
+          to: 'status',
+          text: 'Not an image, allowed formats gif, png, jpg, jpeg and webp'
         };
         return reject(obj);
       }
-
+      const to = 'status@broadcast';
       filename = filenameFromMimeType(filename, mimeType);
 
       const result = await this.page.evaluate(
-        ({ to, base64, filename, caption }) => {
-          return WAPI.sendImage(base64, to, filename, caption);
+        ({ to, base64, filename, description }) => {
+          return WAPI.sendImage(
+            base64,
+            to,
+            filename,
+            description,
+            'sendImageStatus'
+          );
         },
-        { to, base64, filename, caption }
+        { to, base64, filename, description }
       );
+
       if (result['erro'] == true) {
         return reject(result);
       } else {
@@ -290,49 +207,88 @@ export class SenderLayer extends ListenerLayer {
       }
     });
   }
+
   /**
-   * Sends messages with options
-   * @param to Chat id
-   * @param content text string
-   * @param options object
+   * Sends file from path
+   * @param filePath File path
+   * @param caption
    */
-  public async sendMessageOptions(
-    to: any,
-    content: any,
-    options?: any
-  ): Promise<Message> {
+  public async sendVideoStatus(filePath: string, description?: string) {
     return new Promise(async (resolve, reject) => {
-      try {
-        const messageId = await this.page.evaluate(
-          ({ to, content, options }) => {
-            return WAPI.sendMessageOptions(to, content, options);
-          },
-          { to, content, options }
-        );
-        const result = (await this.page.evaluate(
-          (messageId: any) => WAPI.getMessageById(messageId),
-          messageId
-        )) as Message;
+      let base64 = await downloadFileToBase64(filePath, ['video/mp4']),
+        obj: { erro: boolean; to: string; text: string };
+
+      if (!base64) {
+        base64 = await fileToBase64(filePath);
+      }
+
+      if (!base64) {
+        obj = {
+          erro: true,
+          to: 'status',
+          text: 'No such file or directory, open "' + filePath + '"'
+        };
+        return reject(obj);
+      }
+
+      let filename = path.basename(filePath);
+
+      let mimeType = base64MimeType(base64);
+
+      if (!mimeType) {
+        obj = {
+          erro: true,
+          to: 'status',
+          text: 'Invalid base64!'
+        };
+        return reject(obj);
+      }
+
+      if (!mimeType.includes('video')) {
+        const obj = {
+          erro: true,
+          to: 'status',
+          text: 'Not an video, allowed format mp4'
+        };
+        return reject(obj);
+      }
+
+      filename = filenameFromMimeType(filename, mimeType);
+      const to = 'status@broadcast';
+      const result = await this.page.evaluate(
+        ({ to, base64, filename, description }) => {
+          return WAPI.sendFile(
+            base64,
+            to,
+            filename,
+            description,
+            'sendVideoStatus',
+            true
+          );
+        },
+        { to, base64, filename, description }
+      );
+      if (result['erro'] == true) {
+        reject(result);
+      } else {
         resolve(result);
-      } catch (error) {
-        reject(error);
       }
     });
   }
 
   /**
-   * Send buttons reply
-   * @param {string} to the numberid xxx@c.us
-   * @param {string} title the titulo
-   * @param {string} subtitle the subtitle
-   * @param {array} buttons arrays
+   * Sends a text message to given chat
+   * @param to chat id: xxxxx@us.c
+   * @param title
+   * @param subtitle
+   * @param buttons
    */
   public async sendButtons(
     to: string,
     title: string,
-    buttons: [],
-    subtitle: string
-  ): Promise<object> {
+    subtitle: string,
+    buttons: any
+  ): Promise<Object> {
     return new Promise(async (resolve, reject) => {
       const typeFunction = 'sendButtons';
       const type = 'string';
@@ -373,16 +329,292 @@ export class SenderLayer extends ListenerLayer {
       }
 
       const result = await this.page.evaluate(
-        ({ to, title, buttons, subtitle }) => {
-          return WAPI.sendButtons(to, title, buttons, subtitle);
+        ({ to, title, subtitle, buttons }) => {
+          return WAPI.sendButtons(to, title, subtitle, buttons);
         },
-        { to, title, buttons, subtitle }
+        { to, title, subtitle, buttons }
+      );
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  public async sendTypeButtons(
+    to: string,
+    title: string,
+    subtitle: string,
+    footer: string,
+    buttons: any
+  ): Promise<Object> {
+    return new Promise(async (resolve, reject) => {
+      const result = await this.page.evaluate(
+        ({ to, title, subtitle, footer, buttons }) => {
+          return WAPI.sendTypeButtons(to, title, subtitle, footer, buttons);
+        },
+        { to, title, subtitle, footer, buttons }
+      );
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Sends a text message to given chat
+   * @param to chat id: xxxxx@us.c
+   * @param content text message
+   * @param passId new id
+   * @param checkNumber the number when submitting!
+   * @param forcingReturn return without sending the message to the server!
+   */
+  public async sendText(
+    to: string,
+    content: string,
+    passId?: any,
+    checkNumber?: boolean,
+    forcingReturn?: boolean,
+    delSend?: boolean
+  ): Promise<Object> {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'sendText';
+      const type = 'string';
+      const check = [
+        {
+          param: 'to',
+          type: type,
+          value: to,
+          function: typeFunction,
+          isUser: true
+        },
+        {
+          param: 'content',
+          type: type,
+          value: content,
+          function: typeFunction,
+          isUser: true
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+      const result = await this.page.evaluate(
+        ({ to, content, passId, checkNumber, forcingReturn, delSend }) => {
+          return WAPI.sendMessage(
+            to,
+            content,
+            undefined,
+            passId,
+            checkNumber,
+            forcingReturn,
+            delSend
+          );
+        },
+        { to, content, passId, checkNumber, forcingReturn, delSend }
+      );
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Automatically sends a link with the auto generated link preview. You can also add a custom message to be added.
+   * @param chatId chat id: xxxxx@us.c
+   * @param url string A link, for example for youtube. e.g https://www.youtube.com/watch?v=Zi_XLOBDo_Y&list=RDEMe12_MlgO8mGFdeeftZ2nOQ&start_radio=1
+   * @param title custom text as the message body, this includes the link or will be attached after the link
+   */
+  public async sendLinkPreview(
+    chatId: string,
+    url: string,
+    title: string,
+    message: string
+  ): Promise<object> {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'sendLinkPreview';
+      const type = 'string';
+      const check = [
+        {
+          param: 'chatId',
+          type: type,
+          value: chatId,
+          function: typeFunction,
+          isUser: true
+        },
+        {
+          param: 'url',
+          type: type,
+          value: url,
+          function: typeFunction,
+          isUser: true
+        },
+        {
+          param: 'title',
+          type: type,
+          value: title,
+          function: typeFunction,
+          isUser: false
+        },
+        {
+          param: 'message',
+          type: type,
+          value: message,
+          function: typeFunction,
+          isUser: false
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+      const thumbnail = await dowloadMetaFileBase64(url);
+      const result = await this.page.evaluate(
+        ({ chatId, url, title, message, thumbnail }) => {
+          return WAPI.sendLinkPreview(chatId, url, title, message, thumbnail);
+        },
+        { chatId, url, title, message, thumbnail }
+      );
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Sends image message base64
+   * @param to Chat id
+   * @param base64 File path, http link or base64Encoded
+   * @param filename
+   * @param caption
+   */
+  public async sendImageFromBase64(
+    to: string,
+    base64: string,
+    filename?: string,
+    caption?: string,
+    status?: boolean
+  ): Promise<SendFileResult> {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'sendImageFromBase64';
+      const type = 'string';
+      const check = [
+        {
+          param: 'to',
+          type: type,
+          value: to,
+          function: typeFunction,
+          isUser: true
+        },
+        {
+          param: 'base64',
+          type: type,
+          value: base64,
+          function: typeFunction,
+          isUser: true
+        },
+        {
+          param: 'filename',
+          type: type,
+          value: filename,
+          function: typeFunction,
+          isUser: false
+        }
+      ];
+
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+
+      let mimeType = base64MimeType(base64);
+
+      if (!mimeType) {
+        obj = {
+          erro: true,
+          to: to,
+          text: 'Invalid base64!'
+        };
+        return reject(obj);
+      }
+
+      if (!mimeType.includes('image')) {
+        const obj = {
+          erro: true,
+          to: to,
+          text: 'Not an image, allowed formats gif, png, jpg, jpeg and webp'
+        };
+        return reject(obj);
+      }
+
+      filename = filenameFromMimeType(filename, mimeType);
+
+      const result = await this.page.evaluate(
+        ({ to, base64, filename, caption, status }) => {
+          return WAPI.sendImage(base64, to, filename, caption, status);
+        },
+        { to, base64, filename, caption, status }
       );
 
       if (result['erro'] == true) {
         return reject(result);
       } else {
         return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * only admin send messages
+   * @param chatId Group
+   * @param {boolean} type 'true' only admin can send messages or 'false' everyone can send
+   */
+  public async onlySendAdmin(chatId: string, type: boolean) {
+    return new Promise(async (resolve, reject) => {
+      const result: any = await this.page
+        .evaluate(
+          ({ chatId, type }) => {
+            return WAPI.onlySendAdmin(chatId, type);
+          },
+          { chatId, type }
+        )
+        .catch(() => {});
+      if (result?.erro == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  public async sendMessageOptions(
+    chat: any,
+    content: any,
+    options?: any
+  ): Promise<Message> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const messageId = await this.page.evaluate(
+          ({ chat, content, options }) => {
+            return WAPI.sendMessageOptions(chat, content, options);
+          },
+          { chat, content, options }
+        );
+        const result = (await this.page.evaluate(
+          (messageId: any) => WAPI.getMessageById(messageId),
+          messageId
+        )) as Message;
+        resolve(result);
+      } catch (error) {
+        reject(error);
       }
     });
   }
@@ -398,7 +630,8 @@ export class SenderLayer extends ListenerLayer {
     to: string,
     filePath: string,
     filename?: string,
-    caption?: string
+    caption?: string,
+    passId?: any
   ): Promise<SendFileResult> {
     return new Promise(async (resolve, reject) => {
       let base64 = await downloadFileToBase64(filePath, [
@@ -426,9 +659,48 @@ export class SenderLayer extends ListenerLayer {
         filename = path.basename(filePath);
       }
 
-      this.sendImageFromBase64(to, base64, filename, caption)
-        .then(resolve)
-        .catch(reject);
+      let mimeType = base64MimeType(base64);
+
+      if (!mimeType) {
+        obj = {
+          erro: true,
+          to: to,
+          text: 'Invalid base64!'
+        };
+        return reject(obj);
+      }
+
+      if (!mimeType.includes('image')) {
+        const obj = {
+          erro: true,
+          to: to,
+          text: 'Not an image, allowed formats gif, png, jpg, jpeg and webp'
+        };
+        return reject(obj);
+      }
+
+      filename = filenameFromMimeType(filename, mimeType);
+
+      const result = await this.page.evaluate(
+        ({ to, base64, filename, caption, passId }) => {
+          return WAPI.sendImage(
+            base64,
+            to,
+            filename,
+            caption,
+            'sendImage',
+            false,
+            passId
+          );
+        },
+        { to, base64, filename, caption, passId }
+      );
+
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
     });
   }
 
@@ -438,7 +710,6 @@ export class SenderLayer extends ListenerLayer {
    * @param url
    * @param title
    * @param description
-   * @param text
    * @param chatId
    */
   public async sendMessageWithThumb(
@@ -446,19 +717,17 @@ export class SenderLayer extends ListenerLayer {
     url: string,
     title: string,
     description: string,
-    text: string,
     chatId: string
   ) {
-    return this.page.evaluate(
-      ({ thumb, url, title, description, chatId, text }) => {
-        WAPI.sendMessageWithThumb(thumb, url, title, description, text, chatId);
+    return await this.page.evaluate(
+      ({ thumb, url, title, description, chatId }) => {
+        WAPI.sendMessageWithThumb(thumb, url, title, description, chatId);
       },
       {
         thumb,
         url,
         title,
         description,
-        text,
         chatId
       }
     );
@@ -523,9 +792,10 @@ export class SenderLayer extends ListenerLayer {
   /**
    * Send audio base64
    * @param to Chat id
-   * @param base64 base64 data. MUST start with "data:(yourMimeType);base64,"
+   * @param base64 base64 data
+   * @param passId new id
    */
-  public async sendVoiceBase64(to: string, base64: string) {
+  public async sendVoiceBase64(to: string, base64: string, passId?: any) {
     return new Promise(async (resolve, reject) => {
       const mimeType: any = base64MimeType(base64);
 
@@ -533,16 +803,21 @@ export class SenderLayer extends ListenerLayer {
         obj = {
           erro: true,
           to: to,
-          text: 'Invalid base64 or missing MimeType!'
+          text: 'Invalid base64!'
         };
         return reject(obj);
       }
-      if (!mimeType || mimeType.includes('audio/mpeg')) {
+
+      if (
+        !mimeType ||
+        mimeType.includes('audio/mpeg') ||
+        mimeType.includes('audio/mp3')
+      ) {
         const result = await this.page.evaluate(
-          ({ to, base64 }) => {
-            return WAPI.sendPtt(base64, to);
+          ({ to, base64, passId }) => {
+            return WAPI.sendPtt(base64, to, passId);
           },
-          { to, base64 }
+          { to, base64, passId }
         );
         if (result['erro'] == true) {
           reject(result);
@@ -564,47 +839,74 @@ export class SenderLayer extends ListenerLayer {
    * Send audio file
    * @param to Chat id
    * @param filePath Path file
+   * @param passId new id
+   * @param checkNumber the number when submitting!
+   * @param forcingReturn return without sending the message to the server!
    */
-  public async sendVoice(to: string, filePath: string) {
+  public async sendVoice(
+    to: string,
+    filePath: string,
+    passId?: any,
+    checkNumber?: boolean,
+    forcingReturn?: boolean,
+    delSend?: boolean
+  ) {
     return new Promise(async (resolve, reject) => {
-      let base64: string | false = await downloadFileToBase64(filePath, [
-        'audio/mpeg'
-      ]);
+      try {
+        let base64: string | false = await downloadFileToBase64(filePath, [
+          'audio/mpeg',
+          'audio/mp3'
+        ]);
 
-      if (!base64) {
-        base64 = await fileToBase64(filePath);
-      }
-
-      if (!base64) {
-        obj = {
-          erro: true,
-          to: to,
-          text: 'No such file or directory, open "' + filePath + '"'
-        };
-        return reject(obj);
-      }
-
-      const mimeInfo: any = base64MimeType(base64);
-
-      if (!mimeInfo || mimeInfo.includes('audio/mpeg')) {
-        const result: any = await this.page.evaluate(
-          ({ to, base64 }) => {
-            return WAPI.sendPtt(base64, to);
-          },
-          { to, base64 }
-        );
-        if (result['erro'] == true) {
-          reject(result);
-        } else {
-          resolve(result);
+        if (!base64) {
+          base64 = await fileToBase64(filePath);
         }
-      } else {
-        obj = {
-          erro: true,
-          to: to,
-          text: 'Use the MP3 format to be able to send an audio!'
-        };
-        return reject(obj);
+
+        if (!base64) {
+          obj = {
+            erro: true,
+            to: to,
+            text: 'No such file or directory, open "' + filePath + '"'
+          };
+          return reject(obj);
+        }
+
+        const mimeInfo = base64MimeType(base64);
+
+        if (
+          !mimeInfo ||
+          mimeInfo.includes('audio/mpeg') ||
+          mimeInfo.includes('audio/mp3')
+        ) {
+          const result: any = await this.page.evaluate(
+            ({ to, base64, passId, checkNumber, forcingReturn, delSend }) => {
+              return WAPI.sendPtt(
+                base64,
+                to,
+                passId,
+                checkNumber,
+                forcingReturn,
+                delSend
+              );
+            },
+            { to, base64, passId, checkNumber, forcingReturn, delSend }
+          );
+          if (result['erro'] == true) {
+            reject(result);
+          } else {
+            resolve(result);
+          }
+        } else {
+          obj = {
+            erro: true,
+            to: to,
+            text: 'Use the MP3 format to be able to send an audio!'
+          };
+          return reject(obj);
+        }
+      } catch (error) {
+        console.log(error);
+        return reject(error);
       }
     });
   }
@@ -613,7 +915,7 @@ export class SenderLayer extends ListenerLayer {
    * Sends file
    * base64 parameter should have mime type already defined
    * @param to Chat id
-   * @param base64 base64 data. MUST start with "data:(yourMimeType);base64,"
+   * @param base64 base64 data
    * @param filename
    * @param caption
    */
@@ -621,7 +923,8 @@ export class SenderLayer extends ListenerLayer {
     to: string,
     base64: string,
     filename: string,
-    caption?: string
+    caption?: string,
+    passId?: any
   ): Promise<SendFileResult> {
     return new Promise(async (resolve, reject) => {
       let mimeType = base64MimeType(base64);
@@ -630,7 +933,7 @@ export class SenderLayer extends ListenerLayer {
         obj = {
           erro: true,
           to: to,
-          text: 'Invalid base64 or missing MimeType!'
+          text: 'Invalid base64!'
         };
         return reject(obj);
       }
@@ -639,10 +942,18 @@ export class SenderLayer extends ListenerLayer {
 
       const type = 'FileFromBase64';
       const result = await this.page.evaluate(
-        ({ to, base64, filename, caption, type }) => {
-          return WAPI.sendFile(base64, to, filename, caption, type);
+        ({ to, base64, filename, caption, type, passId }) => {
+          return WAPI.sendFile(
+            base64,
+            to,
+            filename,
+            caption,
+            type,
+            undefined,
+            passId
+          );
         },
-        { to, base64, filename, caption, type }
+        { to, base64, filename, caption, type, passId }
       );
       if (result['erro'] == true) {
         reject(result);
@@ -663,7 +974,11 @@ export class SenderLayer extends ListenerLayer {
     to: string,
     filePath: string,
     filename?: string,
-    caption?: string
+    caption?: string,
+    passId?: any,
+    checkNumber?: boolean,
+    forcingReturn?: boolean,
+    delSend?: boolean
   ) {
     return new Promise(async (resolve, reject) => {
       let base64 = await downloadFileToBase64(filePath),
@@ -682,13 +997,63 @@ export class SenderLayer extends ListenerLayer {
         return reject(obj);
       }
 
-      if (!filename) {
+      if (!filename && typeof filename !== 'string') {
         filename = path.basename(filePath);
       }
 
-      this.sendFileFromBase64(to, base64, filename, caption)
-        .then(resolve)
-        .catch(reject);
+      let mimeType = base64MimeType(base64);
+
+      if (!mimeType) {
+        obj = {
+          erro: true,
+          to: to,
+          text: 'Invalid base64!'
+        };
+        return reject(obj);
+      }
+
+      filename = filenameFromMimeType(filename, mimeType);
+
+      const result = await this.page.evaluate(
+        ({
+          to,
+          base64,
+          filename,
+          caption,
+          passId,
+          checkNumber,
+          forcingReturn,
+          delSend
+        }) => {
+          return WAPI.sendFile(
+            base64,
+            to,
+            filename,
+            caption,
+            'sendFile',
+            undefined,
+            passId,
+            checkNumber,
+            forcingReturn,
+            delSend
+          );
+        },
+        {
+          to,
+          base64,
+          filename,
+          caption,
+          passId,
+          checkNumber,
+          forcingReturn,
+          delSend
+        }
+      );
+      if (result['erro'] == true) {
+        reject(result);
+      } else {
+        resolve(result);
+      }
     });
   }
 
@@ -859,7 +1224,7 @@ export class SenderLayer extends ListenerLayer {
 
   /**
    * Generates sticker from given image and sends it (Send Image As Sticker)
-   * @param path image path imageBase64 A valid png, jpg and webp image is required. You can also send via http/https or row base64 (http://www.website.com/img.gif)
+   * @param path image path imageBase64 A valid png, jpg and webp image is required. You can also send via http/https (http://www.website.com/img.gif)
    * @param to chatId '000000000000@c.us'
    */
   public async sendImageAsSticker(
@@ -876,11 +1241,6 @@ export class SenderLayer extends ListenerLayer {
 
     if (!b64) {
       b64 = await fileToBase64(path);
-    }
-
-    if (!b64) {
-      //accept path as base64 directly
-      b64 = path;
     }
 
     if (b64) {
@@ -952,27 +1312,157 @@ export class SenderLayer extends ListenerLayer {
   }
 
   /**
-   * Sets a chat status to seen. Marks all messages as ack: 3
-   * @param chatId chat id: xxxxx@us.c
-   */
-  public async sendSeen(chatId: string) {
-    return this.page.evaluate((chatId) => WAPI.sendSeen(chatId), chatId);
-  }
-
-  /**
    * Starts typing ('Typing...' state)
-   * @param chatId
+   * @param chatId chat id: xxxxx@us.c
+   * @param checkNumber the number when submitting!
    */
-  public async startTyping(to: string) {
-    return this.page.evaluate(({ to }) => WAPI.startTyping(to), { to });
+  public async startTyping(chatId: string, checkNumber: boolean) {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'startTyping';
+      const type = 'string';
+      const check = [
+        {
+          param: 'chatId',
+          type: type,
+          value: chatId,
+          function: typeFunction,
+          isUser: true
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+      const result = await this.page.evaluate(
+        ({ chatId, checkNumber }) => WAPI.startTyping(chatId, checkNumber),
+        { chatId, checkNumber }
+      );
+
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
   }
 
   /**
-   * Stops typing
-   * @param to Chat id
+   * Start Recording
+   * @param chatId Chat id
+   * @param checkNumber the number when submitting!
    */
-  public async stopTyping(to: string) {
-    return this.page.evaluate(({ to }) => WAPI.stopTyping(to), { to });
+  public async startRecording(chatId: string, checkNumber: boolean) {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'startRecording';
+      const type = 'string';
+      const check = [
+        {
+          param: 'chatId',
+          type: type,
+          value: chatId,
+          function: typeFunction,
+          isUser: true
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+      const result = await this.page.evaluate(
+        ({ chatId, checkNumber }) => WAPI.startRecording(chatId, checkNumber),
+        { chatId, checkNumber }
+      );
+
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Mark Paused
+   * @param chatId Chat id
+   * @param checkNumber the number when submitting!
+   */
+  public async markPaused(chatId: string, checkNumber: boolean) {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'startRecording';
+      const type = 'string';
+      const check = [
+        {
+          param: 'chatId',
+          type: type,
+          value: chatId,
+          function: typeFunction,
+          isUser: true
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+      const result = await this.page.evaluate(
+        ({ chatId, checkNumber }) => WAPI.markPaused(chatId, checkNumber),
+        { chatId, checkNumber }
+      );
+
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Clear Presence
+   * @param chatId Chat id
+   */
+  public async clearPresence(chatId: string) {
+    return new Promise(async (resolve, reject) => {
+      const typeFunction = 'clearPresence';
+      const type = 'string';
+      const check = [
+        {
+          param: 'chatId',
+          type: type,
+          value: chatId,
+          function: typeFunction,
+          isUser: true
+        }
+      ];
+      const validating = checkValuesSender(check);
+      if (typeof validating === 'object') {
+        return reject(validating);
+      }
+
+      const result = await this.page.evaluate(
+        ({ chatId }) => WAPI.clearPresence(chatId),
+        { chatId }
+      );
+
+      if (result['erro'] == true) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  }
+
+  /**
+   * Presence Available
+   */
+  public async presenceAvailable() {
+    return this.page.evaluate(() => WAPI.presenceAvailable());
+  }
+
+  /**
+   * Presence Available
+   */
+  public async presenceUnavailable() {
+    return this.page.evaluate(() => WAPI.presenceUnavailable());
   }
 
   /**
@@ -996,9 +1486,18 @@ export class SenderLayer extends ListenerLayer {
   public async setChatState(chatId: string, chatState: ChatState) {
     return await this.page.evaluate(
       ({ chatState, chatId }) => {
-        WAPI.sendChatstate(chatState, chatId);
+        return WAPI.sendChatstate(chatState, chatId);
       },
       { chatState, chatId }
+    );
+  }
+
+  public async sendReactions(IdMessage: string, emoji: string) {
+    return await this.page.evaluate(
+      ({ IdMessage, emoji }) => {
+        WAPI.sendReactions(IdMessage, emoji);
+      },
+      { IdMessage, emoji }
     );
   }
 }
